@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "judge_proxy"
+version = "0.1.0"
+description = ""
+authors = ["Jatin Katyal <jatin.katyal13@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.3"
+requests = "^2.25.1"
+django-rest-framework = "^0.1.0"
+python-dotenv = "^0.17.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

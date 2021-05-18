@@ -25,6 +25,8 @@ ALLOWED_HOSTS = Config.ALLOWED_HOSTS
 # Application definition
 
 INSTALLED_APPS = [
+    "corsheaders",
+    "rest_framework",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -33,6 +35,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -41,6 +44,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = "judge_proxy.urls"
 
 WSGI_APPLICATION = "judge_proxy.wsgi.application"
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}
 
 
 # Password validation
@@ -73,3 +83,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080"
+]

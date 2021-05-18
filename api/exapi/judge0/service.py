@@ -12,13 +12,17 @@ class Judge0ExApi:
     def create_submission(self, source_code: str, language_id: int, stdin: str) -> str:
         params = {"base64_encoded": "true"}
         body = {"source_code": source_code, "language_id": language_id, "stdin": stdin}
-        response = requests.get(f"{self._url}/submissions", params=params, json=body)
+        headers = {
+            "X-Auth-Token": "something"
+        }
+        response = requests.post(f"{self._url}/submissions", params=params, json=body, headers=headers)
 
-        if response.status_code != HTTPStatus.OK:
+        if response.status_code != HTTPStatus.CREATED:
             raise RuntimeError(
                 f"""
                 Runtime Error
                 Message: {response.content.decode("utf-8")}
+                Status Code: {response.status_code}
             """
             )
 
@@ -37,6 +41,7 @@ class Judge0ExApi:
                 f"""
                 Runtime Error
                 Message: {response.content.decode("utf-8")}
+                Status Code: {response.status_code}
             """
             )
 

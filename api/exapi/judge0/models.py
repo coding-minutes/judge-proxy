@@ -10,6 +10,7 @@ class Submission:
     stderr: Optional[str]
     compile_output: Optional[str]
 
+    @classmethod
     def from_dict(cls, dikt) -> "Submission":
         return cls(
             time=dikt["time"],

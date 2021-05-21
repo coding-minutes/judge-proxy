@@ -47,9 +47,7 @@ WSGI_APPLICATION = "judge_proxy.wsgi.application"
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-    ]
+    "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer",]
 }
 
 
@@ -84,7 +82,4 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "http://127.0.0.1:8080"
-]
+CORS_ALLOWED_ORIGINS = ["http://localhost:8080", "http://127.0.0.1:8080"]

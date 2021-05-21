@@ -11,9 +11,10 @@ class LanguageSerializer(BaseSerializer):
     name = serializers.CharField()
     editor_code = serializers.CharField()
 
+
 class ListLanguageView(APIView):
     def get(self, request) -> Response:
         languages = Config.LANGUAGES
-        serializer = LanguageSerializer(languages, many = True)
+        serializer = LanguageSerializer(languages, many=True)
 
         return Response(serializer.data)

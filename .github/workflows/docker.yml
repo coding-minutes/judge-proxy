@@ -47,3 +47,16 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+        
+  promote:
+    name: promote to production
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: cd ~/servers && docker-compose pull && docker-compose kill judge_proxy && docker-compose up -d

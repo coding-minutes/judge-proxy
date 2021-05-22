@@ -10,7 +10,7 @@ from api.exapi.judge0.service import get_judge0_exapi
 class SubmissionDeserializer(serializers.Serializer):
     source_code = serializers.CharField()
     language_id = serializers.IntegerField()
-    stdin = serializers.CharField()
+    stdin = serializers.CharField(allow_blank = True, required = False)
 
 
 class SubmissionSerializer(BaseSerializer):

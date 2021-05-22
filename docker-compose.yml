@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+    judge_proxy:
+        container_name: judge_proxy
+        build: ./
+        env_file: 
+            - .env
+        ports:
+            - "8000:8000"

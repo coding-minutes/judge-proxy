@@ -2,11 +2,12 @@ version: "3"
 
 services:
     judge_proxy:
-        container_name: codingminutes/judge_proxy
+        image: codingminutes/judge_proxy
+        build: .
         env_file:
             - .env
         ports:
-            - "8000:8000"
+            - "8005:8000"
     judge_server:
         image: judge0/judge0:1.13.0
         volumes:
@@ -33,5 +34,5 @@ services:
         ]
         env_file: judge0.conf
         volumes:
-            - redis-data:/data
+            - /tmp/redis-data:/data
         restart: always

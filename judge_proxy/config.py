@@ -17,4 +17,5 @@ class Config:
         {"id": 63, "name": "JavaScript (Node.js 12.14.0)", "editor_code": "javascript"},
         {"id": 70, "name": "Python (2.7.17)", "editor_code": "python"},
         {"id": 71, "name": "Python (3.8.1)", "editor_code": "python"},
+        {"id": 72, "name": "Ruby (2.7.0)", "editor_code": "ruby"},
     ]

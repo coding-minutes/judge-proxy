@@ -68,4 +68,8 @@ if __name__ == "__main__":
     main()
 
 """,
+    # Ruby (2.7.0)
+    "72": """
+puts "Hello World"
+    """
 }
